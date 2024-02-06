@@ -78,7 +78,3 @@ WHERE{
 }
 ORDER BY ASC(?ransomware)
 ```
-
-
-**BOMRa Construction**
-The ransomware ontology BOMRa is constructed using the ontology editor Protege 5.5.0. The HermiT semantic reasoner is enabled in Protege to infer implicit information from the BOMRa. The knowledge extracted from the ransomware analysis results is represented as individuals in BOMRa using OWL API and stored in GraphDB.
