@@ -72,7 +72,6 @@ SELECT DISTINCT ?ransomware
 WHERE{
   ?ransomware rdf:type bomra:Ransomware .
   ?equiv_classes rdf:type bomra:CodeExecutionForestallment .
-  ?ransomware a ?equiv_classes .
   ?ransomware bomra:adopts ?technique
 }
 ORDER BY ASC(?ransomware)
