@@ -51,9 +51,8 @@ PREFIX bomra: <http://research.amrita.edu/bsr/ontologies/2022/ransomware-behavio
 SELECT DISTINCT ?ransomware
 WHERE{
   ?ransomware a bomra:Ransomware .
-  ?behavior_1 a bomra:File .
-  ?api_calls a ?equiv_classes .
-  ?ransomware bomra:calls ?api_calls
+  ?behavior_1 a bomra:FileDecryption .
+  ?ransomware bomra:exhibits ?behavior_1
 }
 ORDER BY ASC(?ransomware)
 ```
@@ -71,10 +70,10 @@ PREFIX bomra: <http://research.amrita.edu/bsr/ontologies/2022/ransomware-behavio
 
 SELECT DISTINCT ?ransomware
 WHERE{
-  ?ransomware a bomra:Ransomware .
-  ?equiv_classes a owl:equivalentClass bomra:DeleteFileW .
-  ?api_calls a ?equiv_classes .
-  ?ransomware bomra:calls ?api_calls
+  ?ransomware rdf:type bomra:Ransomware .
+  ?equiv_classes rdf:type bomra:CodeExecutionForestallment .
+  ?ransomware a ?equiv_classes .
+  ?ransomware bomra:adopts ?technique
 }
 ORDER BY ASC(?ransomware)
 ```
